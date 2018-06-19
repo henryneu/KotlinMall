@@ -1,4 +1,9 @@
-apply plugin: 'com.android.application'
+// 实现库工程与应用程序工程之间的切花
+if (isUserModel.toBoolean()) {
+    apply plugin: 'com.android.library'
+} else {
+    apply plugin: 'com.android.application'
+}
 
 apply plugin: 'kotlin-android'
 
@@ -6,14 +11,16 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 26
+
     defaultConfig {
-        applicationId "com.bkjk.kotlin.base"
         minSdkVersion 17
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -22,25 +29,19 @@ android {
     }
 
     // AndroidManifest 根绝变量配置切换
-/*    sourceSets {
+    sourceSets {
         main {
             if (isUserModel.toBoolean()) {
-                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
-                def dirs = ['main', 'example']
-                dirs.each { dir ->
-                    java.srcDir("src/$dir/java")
-                    res.srcDir("src/$dir/res")
-                }
-            } else {
-                manifest.srcFile 'src/main/AndroidManifest.xml'
-                def dirs = ['main']
-                //release模式下排除debug文件夹中的所有Java文件
+                manifest.srcFile 'src/main/release/AndroidManifest.xml'
+                // release 模式下排除debug文件中的所有Java文件
                 java {
                     exclude 'debug/**'
                 }
+            } else {
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
             }
         }
-    }*/
+    }
 }
 
 repositories {
@@ -55,8 +56,4 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':Provider')
-
-    if (isUserModel.toBoolean()) {
-        implementation project(':UserCenter')
-    }
 }
