@@ -34,6 +34,7 @@
     <option name="modulesWithSuppressedNotConfigured">
       <set>
         <option value="App" />
+        <option value="UserCenter" />
       </set>
     </option>
   </component>

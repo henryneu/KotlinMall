@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    tools:context=".ui.activity.TestActivity">
 
     <EditText
-        android:id="@+id/mRegisterEt"
+        android:id="@+id/mTestNameEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:hint="请输入手机号码" />
+        android:hint="Name" />
+
+    <EditText
+        android:id="@+id/mTestPsdEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Psd" />
 
     <Button
-        android:id="@+id/mRegisterBtn"
+        android:id="@+id/mTestBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="注册"
