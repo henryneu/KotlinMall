@@ -45,4 +45,11 @@ dependencies {
     // Anko Layouts
     api "org.jetbrains.anko:anko-sdk25:$anko_version" // sdk15, sdk19, sdk21, sdk23 are also available
     api "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
+
+    compile "io.reactivex.rxjava2:rxkotlin:$rx2_kotlin_version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rx2_android_version"
+    // Because RxAndroid releases are few and far between, it is recommended you also
+    // explicitly depend on RxJava's latest version for bug fixes and new features.
+    // (see https://github.com/ReactiveX/RxJava/releases for latest 2.x.x version)
+    implementation "io.reactivex.rxjava2:rxjava:$rx_java2_version"
 }
