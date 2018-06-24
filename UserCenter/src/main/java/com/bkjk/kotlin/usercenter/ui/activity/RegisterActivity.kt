@@ -22,6 +22,10 @@ class RegisterActivity : BaseMVPActivity<RegisterPresenter>(), RegisterView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
+        mPresenter = RegisterPresenter()
+        mPresenter.mView = this
+
         mRegisterBtn.setOnClickListener {
 /*            // Toast.makeText(this, "注册", Toast.LENGTH_SHORT).show()
             // Anko toast 的使用方式
@@ -29,9 +33,6 @@ class RegisterActivity : BaseMVPActivity<RegisterPresenter>(), RegisterView {
             // Anko 启动 Activity 的两种使用方式
             startActivity(intentFor<TestActivity>("id" to 5).singleTop())
             // startActivity<TestActivity>("id" to 10)*/
-
-            mPresenter = RegisterPresenter()
-            mPresenter.mView = this
 
             mPresenter.onRegister("", "", "")
         }
