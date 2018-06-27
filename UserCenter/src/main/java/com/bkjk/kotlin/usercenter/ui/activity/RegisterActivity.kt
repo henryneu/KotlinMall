@@ -34,7 +34,7 @@ class RegisterActivity : BaseMVPActivity<RegisterPresenter>(), RegisterView {
             startActivity(intentFor<TestActivity>("id" to 5).singleTop())
             // startActivity<TestActivity>("id" to 10)*/
 
-            mPresenter.onRegister("", "", "")
+            mPresenter.onRegister(mMobileEt.text.toString(), mVerifyCodeEt.text.toString(), mPwdEt.text.toString())
         }
     }
 }

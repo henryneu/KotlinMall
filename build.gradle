@@ -4,7 +4,7 @@ buildscript {
     ext.kotlin_version = '1.2.20'
     ext.anko_version = '0.10.5'
     ext.rx_java2_version = '2.1.14'
-    ext.rx2_kotlin_version = '2.2.0'
+    ext.rx2_kotlin_version = '2.0.2'
     ext.rx2_android_version = '2.0.2'
     ext.retrofit2_version = '2.4.0'
     ext.okhttp_version = '3.10.0'

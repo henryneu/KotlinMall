@@ -4,18 +4,52 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <LinearLayout android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <EditText
+            android:id="@+id/mMobileEt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/user_center_s_phone_num"
+            android:layout_weight="1.0"
+            android:inputType="phone" />
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/mVerifyCodeBtn"
+            android:text="@string/user_center_s_verification_code"/>
+
+    </LinearLayout>
+
     <EditText
-        android:id="@+id/mRegisterEt"
+        android:id="@+id/mVerifyCodeEt"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="@string/user_center_s_msg_verify_code"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/mPwdEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:hint="请输入手机号码" />
+        android:hint="@string/user_center_s_pwd_code"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/mPwdConfirmEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/user_center_s_again_pwd_code"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/mRegisterBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="注册"
+        android:text="@string/user_center_s_register_btn"
         android:textSize="16sp" />
 
 </LinearLayout>

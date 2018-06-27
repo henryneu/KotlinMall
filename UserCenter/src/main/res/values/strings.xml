@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">UserCenter</string>
+    <string name="user_center_s_phone_num">请输入手机号码</string>
+    <string name="user_center_s_verification_code">获取验证码</string>
+    <string name="user_center_s_msg_verify_code">请输入短信验证码</string>
+    <string name="user_center_s_pwd_code">请输入密码(6–20位字母或数字)</string>
+    <string name="user_center_s_again_pwd_code">请再次输入密码</string>
+    <string name="user_center_s_register_btn">注册</string>
 </resources>
