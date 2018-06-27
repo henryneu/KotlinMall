@@ -6,6 +6,9 @@ buildscript {
     ext.rx_java2_version = '2.1.14'
     ext.rx2_kotlin_version = '2.2.0'
     ext.rx2_android_version = '2.0.2'
+    ext.retrofit2_version = '2.4.0'
+    ext.okhttp_version = '3.10.0'
+    ext.okhttp_log_interceptor_version = '3.4.1'
     repositories {
         google()
         jcenter()
