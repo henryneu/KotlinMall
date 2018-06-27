@@ -52,4 +52,10 @@ dependencies {
     // explicitly depend on RxJava's latest version for bug fixes and new features.
     // (see https://github.com/ReactiveX/RxJava/releases for latest 2.x.x version)
     compile "io.reactivex.rxjava2:rxjava:$rx_java2_version"
+
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
 }
