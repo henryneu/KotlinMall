@@ -5,8 +5,8 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 
-fun <T> Observable<T>.execute(subscriber: BaseObserver<T>) {
+fun <T> Observable<T>.execute(observer: BaseObserver<T>) {
     this.subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(subscriber)
+            .subscribe(observer)
 }
