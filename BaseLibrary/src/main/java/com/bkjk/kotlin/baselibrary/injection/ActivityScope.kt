@@ -1,11 +1,10 @@
 package com.bkjk.kotlin.baselibrary.injection
 
-import java.lang.annotation.Documented
 import java.lang.annotation.Retention
 import javax.inject.Scope
 import java.lang.annotation.RetentionPolicy.RUNTIME
 
 @Scope
-@Documented
+@MustBeDocumented
 @Retention(RUNTIME)
 annotation class ActivityScope

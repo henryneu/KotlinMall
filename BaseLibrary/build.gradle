@@ -64,4 +64,10 @@ dependencies {
     // Dagger2
     compile 'com.google.dagger:dagger:2.16'
     kapt 'com.google.dagger:dagger-compiler:2.16'
+
+    // RxLifecycle
+    // If you want to use Kotlin syntax
+    compile 'com.trello.rxlifecycle2:rxlifecycle-kotlin:2.2.1'
+    // If you want to use Kotlin syntax with Android Lifecycle
+    compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.1'
 }

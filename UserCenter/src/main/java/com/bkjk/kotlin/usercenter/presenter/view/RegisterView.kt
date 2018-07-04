@@ -4,5 +4,5 @@ import com.bkjk.kotlin.baselibrary.presenter.view.BaseView
 
 interface RegisterView: BaseView {
 
-    fun onRegistered(result: Boolean)
+    fun onRegistered(result: String)
 }
