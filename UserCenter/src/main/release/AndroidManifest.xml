@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bkjk.kotlin.usercenter">
+    package="com.kotlin.user">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
-        android:name="com.bkjk.kotlin.baselibrary.common.BaseApplication"
         android:allowBackup="true"
         android:label="@string/app_name"
         android:supportsRtl="true" >
-        <activity android:name=".ui.activity.RegisterActivity">
-        </activity>
+
     </application>
 
 </manifest>

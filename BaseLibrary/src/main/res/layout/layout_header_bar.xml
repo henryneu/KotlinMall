@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/common_header_bar_height"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/common_blue">
+
+    <ImageView
+        android:id="@+id/mHeaderBarIv"
+        style="@style/WrapMatch"
+        android:paddingLeft="@dimen/common_padding"
+        android:paddingRight="@dimen/common_padding"
+        android:src="@drawable/header_bar_back" />
+
+    <TextView
+        android:id="@+id/mHeaderBarTitle"
+        style="@style/WrapWrap"
+        android:layout_centerInParent="true"
+        tools:text="标题"
+        android:textSize="@dimen/text_large_size"
+        android:textColor="@color/common_white" />
+
+    <TextView
+        android:id="@+id/mHeaderBarRt"
+        style="@style/WrapMatch"
+        android:paddingLeft="@dimen/common_padding"
+        android:paddingRight="@dimen/common_padding"
+        android:gravity="center"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        tools:text="取消"
+        android:textColor="@color/common_white" />
+
+</RelativeLayout>

@@ -1,6 +1,7 @@
 package com.bkjk.kotlin.usercenter.ui.activity
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.bkjk.kotlin.baselibrary.ext.onClick
 import com.bkjk.kotlin.baselibrary.ui.activity.BaseMVPActivity
@@ -39,6 +40,8 @@ class RegisterActivity : BaseMVPActivity<RegisterPresenter>(), RegisterView {
         mRegisterBtn.onClick {
             mPresenter.onRegister(mMobileEt.text.toString(), mVerifyCodeEt.text.toString(), mPwdEt.text.toString())
         }
+        mHeaderBar.getRightView().text = "登录"
+        mHeaderBar.getRightView().visibility = View.VISIBLE
     }
 
     override fun initInjectionComponent() {

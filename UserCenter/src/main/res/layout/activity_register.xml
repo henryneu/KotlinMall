@@ -2,11 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" >
+
+    <com.bkjk.kotlin.baselibrary.widgets.HeaderBar
+        android:id="@+id/mHeaderBar"
+        app:isShowBack="false"
+        app:titleText="@string/user_center_s_register_btn"
+        style="@style/MatchWrap" />
 
     <LinearLayout android:orientation="horizontal"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent" >
 
         <EditText
             android:id="@+id/mMobileEt"
@@ -20,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:id="@+id/mVerifyCodeBtn"
-            android:text="@string/user_center_s_verification_code"/>
+            android:text="@string/user_center_s_verification_code" />
 
     </LinearLayout>
 
