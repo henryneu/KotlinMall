@@ -8,23 +8,18 @@ import com.bkjk.kotlin.baselibrary.injection.module.ActivityModule
 import com.bkjk.kotlin.baselibrary.injection.module.LifecycleProviderModule
 import com.bkjk.kotlin.baselibrary.presenter.BasePresenter
 import com.bkjk.kotlin.baselibrary.presenter.view.BaseView
+import com.bkjk.kotlin.baselibrary.widgets.ProgressLoading
 import javax.inject.Inject
 
 abstract class BaseMVPActivity<T: BasePresenter<*>>: BaseActivity(), BaseView {
-    override fun showLoading() {
-
-    }
-
-    override fun hideLoading() {
-    }
-
-    override fun onError() {
-    }
 
     @Inject
     lateinit var mPresenter: T
 
     lateinit var activityComponent: ActivityComponent
+
+    /** 加载对话框 */
+    private lateinit var mProgressDialog: ProgressLoading
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +27,8 @@ abstract class BaseMVPActivity<T: BasePresenter<*>>: BaseActivity(), BaseView {
         initActivityInjection()
 
         initInjectionComponent()
+
+        mProgressDialog = ProgressLoading.create(this)
     }
 
     abstract fun initInjectionComponent()
@@ -42,5 +39,16 @@ abstract class BaseMVPActivity<T: BasePresenter<*>>: BaseActivity(), BaseView {
                 .activityModule(ActivityModule(this))
                 .lifecycleProviderModule(LifecycleProviderModule(this))
                 .build()
+    }
+
+    override fun showLoading() {
+        mProgressDialog.showLoading()
+    }
+
+    override fun hideLoading() {
+        mProgressDialog.hideLoading()
+    }
+
+    override fun onError() {
     }
 }

@@ -21,4 +21,6 @@
     <dimen name="text_big_size">16sp</dimen>
     <dimen name="text_large_size">18sp</dimen>
 
+    <dimen name="progress_image_padding">40dp</dimen>
+
 </resources>

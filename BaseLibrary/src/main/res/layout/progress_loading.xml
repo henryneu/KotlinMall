@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/WrapWrap.Vertical"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/progress_loading_bg"
+    android:padding="@dimen/progress_image_padding" >
+
+    <ImageView
+        android:id="@+id/mProgressIv"
+        style="@style/WrapWrap"
+        android:layout_gravity="center"
+        android:src="@drawable/progress_loading_anim" />
+
+</LinearLayout>

@@ -1,6 +1,7 @@
 package com.bkjk.kotlin.baselibrary.injection.component
 
 import android.app.Activity
+import android.content.Context
 import com.bkjk.kotlin.baselibrary.injection.ActivityScope
 import com.bkjk.kotlin.baselibrary.injection.module.ActivityModule
 import com.bkjk.kotlin.baselibrary.injection.module.LifecycleProviderModule
@@ -12,6 +13,7 @@ import dagger.Component
         modules = arrayOf(ActivityModule::class, LifecycleProviderModule::class))
 interface ActivityComponent {
 
-    fun activity() : Activity
+    fun activity(): Activity
+    fun context(): Context
     fun lifecycleProvider(): LifecycleProvider<*>
 }

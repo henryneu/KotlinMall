@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false" >
+
+    <!--加载对话框的动画集，false为执行一次就结束动画集，true为循环执行动画集-->
+    <item android:drawable="@drawable/light_progress_loading1" android:duration="200" />
+    <item android:drawable="@drawable/light_progress_loading2" android:duration="200" />
+    <item android:drawable="@drawable/light_progress_loading3" android:duration="200" />
+    <item android:drawable="@drawable/light_progress_loading4" android:duration="200" />
+    <item android:drawable="@drawable/light_progress_loading5" android:duration="200" />
+    <item android:drawable="@drawable/light_progress_loading6" android:duration="200" />
+    <item android:drawable="@drawable/light_progress_loading7" android:duration="200" />
+    <item android:drawable="@drawable/light_progress_loading8" android:duration="200" />
+    <item android:drawable="@drawable/light_progress_loading9" android:duration="200" />
+    <item android:drawable="@drawable/light_progress_loading10" android:duration="200" />
+    <item android:drawable="@drawable/light_progress_loading11" android:duration="200" />
+
+</animation-list>

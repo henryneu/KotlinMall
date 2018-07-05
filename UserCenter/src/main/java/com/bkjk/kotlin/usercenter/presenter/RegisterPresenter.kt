@@ -5,6 +5,7 @@ import com.bkjk.kotlin.baselibrary.presenter.BasePresenter
 import com.bkjk.kotlin.baselibrary.rx.BaseObserver
 import com.bkjk.kotlin.usercenter.presenter.view.RegisterView
 import com.bkjk.kotlin.usercenter.service.impl.UserServiceImpl
+import com.kotlin.base.utils.NetWorkUtils
 import javax.inject.Inject
 
 class RegisterPresenter @Inject constructor(): BasePresenter<RegisterView>() {
@@ -17,8 +18,15 @@ class RegisterPresenter @Inject constructor(): BasePresenter<RegisterView>() {
         /**
          * 处理业务逻辑，如网络请求等等
          */
+
+        if (!checkNetWork()) {
+            println("网络连接不可用")
+            return
+        }
+        mView.showLoading()
+
         userService.register(mobilePhone, verificationCode, pwd)
-                .execute(object : BaseObserver<Boolean>() {
+                .execute(object : BaseObserver<Boolean>(mView) {
                     override fun onNext(t: Boolean) {
                         if (t) {
                             mView.onRegistered("注册成功")
