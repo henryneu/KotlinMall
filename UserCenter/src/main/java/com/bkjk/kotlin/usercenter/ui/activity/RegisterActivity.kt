@@ -42,6 +42,10 @@ class RegisterActivity : BaseMVPActivity<RegisterPresenter>(), RegisterView {
         }
         mHeaderBar.getRightView().text = "登录"
         mHeaderBar.getRightView().visibility = View.VISIBLE
+
+        mVerifyCodeBtn.onClick {
+            mVerifyCodeBtn.requestSendVerifyNumber()
+        }
     }
 
     override fun initInjectionComponent() {

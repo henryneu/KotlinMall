@@ -23,10 +23,9 @@
             android:layout_weight="1.0"
             android:inputType="phone" />
 
-        <Button
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+        <com.bkjk.kotlin.baselibrary.widgets.VerifyButton
             android:id="@+id/mVerifyCodeBtn"
+            style="@style/WrapWrap"
             android:text="@string/user_center_s_verification_code" />
 
     </LinearLayout>

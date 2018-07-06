@@ -9,6 +9,7 @@ import com.bkjk.kotlin.baselibrary.injection.module.LifecycleProviderModule
 import com.bkjk.kotlin.baselibrary.presenter.BasePresenter
 import com.bkjk.kotlin.baselibrary.presenter.view.BaseView
 import com.bkjk.kotlin.baselibrary.widgets.ProgressLoading
+import org.jetbrains.anko.toast
 import javax.inject.Inject
 
 abstract class BaseMVPActivity<T: BasePresenter<*>>: BaseActivity(), BaseView {
@@ -49,6 +50,7 @@ abstract class BaseMVPActivity<T: BasePresenter<*>>: BaseActivity(), BaseView {
         mProgressDialog.hideLoading()
     }
 
-    override fun onError() {
+    override fun onError(text: String) {
+        toast(text)
     }
 }
