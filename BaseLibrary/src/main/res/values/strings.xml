@@ -1,5 +1,11 @@
 <resources>
+
     <string name="app_name">BaseLibrary</string>
     <string name="base_verification_code">获取验证码</string>
     <string name="base_re_verification_code">重获验证码</string>
+
+    <string name="coming_soon_tip">敬请期待~~~</string>
+    <string name="common_loading_error">加载错误</string>
+    <string name="common_loading">正在加载</string>
+
 </resources>

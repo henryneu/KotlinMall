@@ -1,10 +1,14 @@
 package com.bkjk.kotlin.baselibrary.ext
 
+import android.text.Editable
 import android.view.View
+import android.widget.Button
+import android.widget.EditText
 import com.bkjk.kotlin.baselibrary.data.protocol.BaseResp
 import com.bkjk.kotlin.baselibrary.rx.BaseFunction
 import com.bkjk.kotlin.baselibrary.rx.BaseFunctionBoolean
 import com.bkjk.kotlin.baselibrary.rx.BaseObserver
+import com.bkjk.kotlin.baselibrary.widgets.DefaultTextWatcher
 import com.trello.rxlifecycle2.LifecycleProvider
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.Observable
@@ -31,4 +35,13 @@ fun <T> Observable<BaseResp<T>>.convert(): Observable<T> {
 
 fun <T> Observable<BaseResp<T>>.convertBoolean(): Observable<Boolean> {
     return this.flatMap(BaseFunctionBoolean())
+}
+
+fun Button.enable(editText: EditText, method: () -> Boolean) {
+    val mRegisterBtn = this
+    editText.addTextChangedListener(object: DefaultTextWatcher() {
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            mRegisterBtn.isEnabled = method()
+        }
+    })
 }

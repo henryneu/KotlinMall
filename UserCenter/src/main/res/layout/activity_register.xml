@@ -1,61 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" >
+    style="@style/MatchMatch.Vertical" >
 
     <com.bkjk.kotlin.baselibrary.widgets.HeaderBar
         android:id="@+id/mHeaderBar"
-        app:isShowBack="false"
-        app:titleText="@string/user_center_s_register_btn"
+        app:isShowBack="true"
         style="@style/MatchWrap" />
+    
+    <LinearLayout
+        android:background="@drawable/border_corner_all"
+        android:layout_margin="@dimen/common_padding"
+        style="@style/MatchWrap.Vertical">
 
-    <LinearLayout android:orientation="horizontal"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent" >
+        <LinearLayout
+            style="@style/MatchWrap.Horizontal" >
+
+            <EditText
+                android:id="@+id/mMobileEt"
+                android:background="@null"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/common_line_height"
+                android:paddingStart="@dimen/common_padding_small"
+                android:drawableStart="@drawable/user_phone_icon"
+                android:drawablePadding="@dimen/common_padding_small"
+                android:hint="@string/user_center_s_phone_num"
+                android:layout_weight="1.0"
+                android:inputType="phone" />
+
+            <com.bkjk.kotlin.baselibrary.widgets.VerifyButton
+                android:id="@+id/mVerifyCodeBtn"
+                style="@style/WrapWrap"
+                android:background="@null"
+                android:text="@string/user_center_s_verification_code"
+                android:textColor="@color/common_blue" />
+
+        </LinearLayout>
+
+        <View
+            style="@style/DividerFixedHeight" />
 
         <EditText
-            android:id="@+id/mMobileEt"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/user_center_s_phone_num"
-            android:layout_weight="1.0"
-            android:inputType="phone" />
+            android:id="@+id/mVerifyCodeEt"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:paddingStart="@dimen/common_margin_small"
+            android:layout_height="@dimen/common_line_height"
+            android:drawableStart="@drawable/user_verify_code_icon"
+            android:drawablePadding="@dimen/common_margin_small"
+            android:hint="@string/user_center_s_msg_verify_code"
+            android:inputType="number" />
 
-        <com.bkjk.kotlin.baselibrary.widgets.VerifyButton
-            android:id="@+id/mVerifyCodeBtn"
-            style="@style/WrapWrap"
-            android:text="@string/user_center_s_verification_code" />
+        <View
+            style="@style/DividerFixedHeight" />
+
+        <EditText
+            android:id="@+id/mPwdEt"
+            android:background="@null"
+            android:paddingStart="@dimen/common_padding_small"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_line_height"
+            android:drawableStart="@drawable/user_pwd_icon"
+            android:drawablePadding="@dimen/common_padding_small"
+            android:hint="@string/user_center_s_pwd_code"
+            android:inputType="textPassword" />
+
+        <View
+            style="@style/DividerFixedHeight" />
+
+        <EditText
+            android:id="@+id/mPwdConfirmEt"
+            android:background="@null"
+            android:paddingLeft="@dimen/common_padding_small"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_line_height"
+            android:drawableStart="@drawable/user_pwd_icon"
+            android:drawablePadding="@dimen/common_padding_small"
+            android:hint="@string/user_center_s_again_pwd_code"
+            android:inputType="textPassword" />
 
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/mVerifyCodeEt"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:hint="@string/user_center_s_msg_verify_code"
-        android:inputType="number" />
-
-    <EditText
-        android:id="@+id/mPwdEt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/user_center_s_pwd_code"
-        android:inputType="textPassword" />
-
-    <EditText
-        android:id="@+id/mPwdConfirmEt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/user_center_s_again_pwd_code"
-        android:inputType="textPassword" />
-
     <Button
         android:id="@+id/mRegisterBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/user_center_s_register_btn"
-        android:textSize="16sp" />
+        style="@style/FullBtnStyle"
+        android:text="@string/user_center_s_register_btn" />
 
 </LinearLayout>

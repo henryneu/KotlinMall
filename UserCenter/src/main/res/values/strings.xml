@@ -6,4 +6,9 @@
     <string name="user_center_s_pwd_code">请输入密码(6–20位字母或数字)</string>
     <string name="user_center_s_again_pwd_code">请再次输入密码</string>
     <string name="user_center_s_register_btn">注册</string>
+    <string name="user_center_s_login_in">登录</string>
+    <string name="user_center_s_pwd_not_conformity">两次密码输入不一致，请重新输入</string>
+    <string name="user_center_s_phone_num_not_null">输入的手机号码不能为空</string>
+    <string name="user_center_s_regex_phone_num">输入的手机号码格式不正确，请按正确格式输入</string>
+    <string name="user_center_s_send_phone_success">发送成功</string>
 </resources>

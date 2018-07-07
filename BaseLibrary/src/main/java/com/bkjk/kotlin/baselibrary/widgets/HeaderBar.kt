@@ -60,6 +60,13 @@ class HeaderBar @JvmOverloads constructor(context: Context, attrs: AttributeSet?
     }
 
     /**
+     * 获取标题视图
+     */
+    fun getTitleView(): TextView {
+        return mHeaderBarTitle
+    }
+
+    /**
      * 获取右侧视图
      */
     fun getRightView(): TextView {
