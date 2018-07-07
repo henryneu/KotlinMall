@@ -46,8 +46,6 @@ class RegisterActivity : BaseMVPActivity<RegisterPresenter>(), RegisterView, Vie
      */
     private fun initView() {
         mHeaderBar.getTitleView().text = resources.getString(R.string.user_center_s_register_btn)
-        mHeaderBar.getRightView().text = resources.getString(R.string.user_center_s_login_in)
-        mHeaderBar.getRightView().visibility = View.VISIBLE
 
         mVerifyCodeBtn.setOnClickListener(this)
         mRegisterBtn.setOnClickListener(this)

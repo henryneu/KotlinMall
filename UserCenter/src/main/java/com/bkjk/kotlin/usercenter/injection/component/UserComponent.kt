@@ -3,6 +3,7 @@ package com.bkjk.kotlin.usercenter.injection.component
 import com.bkjk.kotlin.baselibrary.injection.component.ActivityComponent
 import com.bkjk.kotlin.baselibrary.injection.module.PerComponentScope
 import com.bkjk.kotlin.usercenter.injection.module.UserModule
+import com.bkjk.kotlin.usercenter.ui.activity.LoginActivity
 import com.bkjk.kotlin.usercenter.ui.activity.RegisterActivity
 import dagger.Component
 
@@ -11,4 +12,5 @@ import dagger.Component
 interface UserComponent {
 
     fun inject(activity: RegisterActivity)
+    fun inject(activity: LoginActivity)
 }

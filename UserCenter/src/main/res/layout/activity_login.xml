@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/MatchMatch.Vertical.Common">
+
+    <com.bkjk.kotlin.baselibrary.widgets.HeaderBar
+        android:id="@+id/mHeaderBar"
+        style="@style/MatchWrap"
+        app:titleText="@string/user_center_s_login_in"
+        app:rightText="@string/user_center_s_register_btn" />
+
+    <LinearLayout
+        android:background="@drawable/border_corner_all"
+        android:layout_margin="@dimen/common_padding"
+        style="@style/MatchWrap.Vertical">
+
+        <EditText
+            android:id="@+id/mMobileEt"
+            android:background="@null"
+            android:paddingStart="@dimen/common_padding_small"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_line_height"
+            android:drawableStart="@drawable/user_name_icon"
+            android:drawablePadding="@dimen/common_padding_small"
+            android:hint="@string/user_center_s_phone_num"
+            android:inputType="phone" />
+
+        <View
+            style="@style/DividerFixedHeight" />
+
+        <EditText
+            android:id="@+id/mPwdEt"
+            android:background="@null"
+            android:paddingStart="@dimen/common_padding_small"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_line_height"
+            android:drawableStart="@drawable/user_pwd_icon"
+            android:drawablePadding="@dimen/common_padding_small"
+            android:hint="@string/user_center_s_login_input_pwd"
+            android:inputType="textPassword" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/mLoginBtn"
+        style="@style/FullBtnStyle"
+        android:text="@string/user_center_s_login_in" />
+
+    <LinearLayout
+        android:layout_marginStart="@dimen/common_margin_middle"
+        android:layout_marginEnd="@dimen/common_margin"
+        android:layout_marginTop="@dimen/common_margin_small"
+        style="@style/MatchWrap.Horizontal" >
+
+        <CheckBox
+            android:id="@+id/mPwdCheckBox"
+            style="@style/WrapWrap" />
+
+        <TextView
+            android:id="@+id/mRememberPwdTv"
+            style="@style/WrapWrap"
+            android:layout_marginStart="@dimen/common_margin_small"
+            android:text="@string/user_center_s_remember_pwd"
+            android:textSize="@dimen/text_big_size"
+            android:textColor="@color/common_blue" />
+
+        <TextView
+            android:id="@+id/mForgetPwdTv"
+            style="@style/WrapWrap"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@string/user_center_s_forget_pwd"
+            android:textSize="@dimen/text_big_size"
+            android:textColor="@color/common_blue" />
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/WrapWrap"
+        android:gravity="bottom"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/copy_right_margin_bottom"
+        android:layout_weight="1"
+        android:text="@string/user_center_s_copy_right"
+        android:textColor="@color/common_blue"
+        android:textSize="@dimen/text_large_size" />
+
+</LinearLayout>

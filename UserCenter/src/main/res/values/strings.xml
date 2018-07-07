@@ -11,4 +11,8 @@
     <string name="user_center_s_phone_num_not_null">输入的手机号码不能为空</string>
     <string name="user_center_s_regex_phone_num">输入的手机号码格式不正确，请按正确格式输入</string>
     <string name="user_center_s_send_phone_success">发送成功</string>
+    <string name="user_center_s_login_input_pwd">请输入密码</string>
+    <string name="user_center_s_remember_pwd">记住密码</string>
+    <string name="user_center_s_forget_pwd">忘记密码？</string>
+    <string name="user_center_s_copy_right">CopyRight @ Henry</string>
 </resources>
