@@ -6,22 +6,21 @@ import com.bkjk.kotlin.baselibrary.ext.enable
 import com.bkjk.kotlin.baselibrary.ext.onClick
 import com.bkjk.kotlin.baselibrary.ui.activity.BaseMVPActivity
 import com.bkjk.kotlin.usercenter.R
-import com.bkjk.kotlin.usercenter.date.protocol.UserInfo
 import com.bkjk.kotlin.usercenter.injection.component.DaggerUserComponent
 import com.bkjk.kotlin.usercenter.injection.module.UserModule
-import com.bkjk.kotlin.usercenter.presenter.LoginPresenter
-import com.bkjk.kotlin.usercenter.presenter.view.LoginView
-import kotlinx.android.synthetic.main.activity_login.*
+import com.bkjk.kotlin.usercenter.presenter.ResetPwdPresenter
+import com.bkjk.kotlin.usercenter.presenter.view.ResetPwdView
+import kotlinx.android.synthetic.main.activity_reset_pwd.*
 import org.jetbrains.anko.startActivity
 
 /**
- * 登录界面
+ * 重置密码界面
  */
-class LoginActivity: BaseMVPActivity<LoginPresenter>(), LoginView, View.OnClickListener {
+class ResetPwdActivity: BaseMVPActivity<ResetPwdPresenter>(), ResetPwdView, View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_reset_pwd)
 
         /** 初始化布局 */
         initView()
@@ -31,21 +30,18 @@ class LoginActivity: BaseMVPActivity<LoginPresenter>(), LoginView, View.OnClickL
      * 初始化布局
      */
     private fun initView() {
-        mHeaderBar.getTitleView().text = resources.getString(R.string.user_center_s_login_in)
-        mHeaderBar.getRightView().text = resources.getString(R.string.user_center_s_register_btn)
-        mHeaderBar.getRightView().visibility = View.VISIBLE
-        mHeaderBar.getRightView().onClick(this)
+        mHeaderBar.getTitleView().text = resources.getString(R.string.user_center_s_reset_pwd)
 
-        mLoginBtn.setOnClickListener(this)
+        mConfirmBtn.setOnClickListener(this)
 
-        mLoginBtn.enable(mMobileEt, {isBtnEnabled()})
-        mLoginBtn.enable(mPwdEt, {isBtnEnabled()})
+        mConfirmBtn.enable(mPwdEt, {isBtnEnabled()})
+        mConfirmBtn.enable(mPwdConfirmEt, {isBtnEnabled()})
     }
 
     /**
-     * 登录回调
+     * 重置密码回调
      */
-    override fun onLoginResult(result: UserInfo) {
+    override fun onRestPwdResult(result: String) {
 
     }
 
@@ -67,7 +63,7 @@ class LoginActivity: BaseMVPActivity<LoginPresenter>(), LoginView, View.OnClickL
         when(view.id) {
             R.id.mHeaderBarRt -> {startActivity<RegisterActivity>()}
             R.id.mLoginBtn -> {
-                mPresenter.login(mMobileEt.text.toString(), mPwdEt.text.toString(), "")
+                mPresenter.resetPwd(mPwdEt.text.toString(), mPwdConfirmEt.text.toString())
             }
         }
     }
@@ -76,7 +72,7 @@ class LoginActivity: BaseMVPActivity<LoginPresenter>(), LoginView, View.OnClickL
      * 判断 Button 是否可用
      */
     private fun isBtnEnabled(): Boolean {
-        return mMobileEt.text.isNullOrEmpty().not() &&
-                mPwdEt.text.isNullOrEmpty().not()
+        return mPwdEt.text.isNullOrEmpty().not() &&
+                mPwdConfirmEt.text.isNullOrEmpty().not()
     }
 }

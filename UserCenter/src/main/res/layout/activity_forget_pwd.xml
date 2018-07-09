@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchMatch.Vertical.Common"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.bkjk.kotlin.baselibrary.widgets.HeaderBar
+        android:id="@+id/mHeaderBar"
+        app:isShowBack="true"
+        style="@style/MatchWrap" />
+
+    <LinearLayout
+        android:background="@drawable/border_corner_all"
+        android:layout_margin="@dimen/common_padding"
+        style="@style/MatchWrap.Vertical">
+
+        <LinearLayout
+            style="@style/MatchWrap.Horizontal" >
+
+            <EditText
+                android:id="@+id/mMobileEt"
+                android:background="@null"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/common_line_height"
+                android:paddingStart="@dimen/common_padding_small"
+                android:drawableStart="@drawable/user_phone_icon"
+                android:drawablePadding="@dimen/common_padding_small"
+                android:hint="@string/user_center_s_phone_num"
+                android:layout_weight="1.0"
+                android:inputType="phone" />
+
+            <com.bkjk.kotlin.baselibrary.widgets.VerifyButton
+                android:id="@+id/mVerifyCodeBtn"
+                style="@style/WrapWrap"
+                android:background="@null"
+                android:text="@string/user_center_s_verification_code"
+                android:textColor="@color/common_blue" />
+
+        </LinearLayout>
+
+        <View
+            style="@style/DividerFixedHeight" />
+
+        <EditText
+            android:id="@+id/mVerifyCodeEt"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:paddingStart="@dimen/common_margin_small"
+            android:layout_height="@dimen/common_line_height"
+            android:drawableStart="@drawable/user_verify_code_icon"
+            android:drawablePadding="@dimen/common_margin_small"
+            android:hint="@string/user_center_s_msg_verify_code"
+            android:inputType="number" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/mNextStepBtn"
+        style="@style/FullBtnStyle"
+        android:text="@string/user_center_s_next_step" />
+
+</LinearLayout>

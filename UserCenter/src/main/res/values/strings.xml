@@ -14,5 +14,10 @@
     <string name="user_center_s_login_input_pwd">请输入密码</string>
     <string name="user_center_s_remember_pwd">记住密码</string>
     <string name="user_center_s_forget_pwd">忘记密码？</string>
+    <string name="user_center_s_forgeted_pwd">忘记密码</string>
+    <string name="user_center_s_reset_pwd">重置密码</string>
     <string name="user_center_s_copy_right">CopyRight @ Henry</string>
+    <string name="user_center_s_next_step">下一步</string>
+    <string name="user_center_s_input_pwd_again">请再次输入密码</string>
+    <string name="user_center_s_confirm">确认</string>
 </resources>

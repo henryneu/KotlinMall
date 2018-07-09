@@ -1,9 +1,7 @@
 package com.bkjk.kotlin.usercenter.date.api
 
 import com.bkjk.kotlin.baselibrary.data.protocol.BaseResp
-import com.bkjk.kotlin.usercenter.date.protocol.LoginReq
-import com.bkjk.kotlin.usercenter.date.protocol.RegisterReq
-import com.bkjk.kotlin.usercenter.date.protocol.UserInfo
+import com.bkjk.kotlin.usercenter.date.protocol.*
 import retrofit2.http.Body
 import retrofit2.http.POST
 import io.reactivex.Observable
@@ -21,4 +19,16 @@ interface UserApi {
      */
     @POST("userCenter/login")
     fun login(@Body req: LoginReq) : Observable<BaseResp<UserInfo>>
+
+    /**
+     * 忘记密码服务
+     */
+    @POST("userCenter/forgetPwd")
+    fun forgetPwd(@Body req: ForgetPwdReq) : Observable<BaseResp<String>>
+
+    /**
+     * 重置密码服务
+     */
+    @POST("userCenter/resetPwd")
+    fun resetPwd(@Body req: ResetPwdReq) : Observable<BaseResp<String>>
 }

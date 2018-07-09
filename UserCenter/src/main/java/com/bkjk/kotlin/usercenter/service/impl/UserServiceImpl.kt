@@ -28,4 +28,18 @@ class UserServiceImpl @Inject constructor(): UserService {
     override fun login(mobilePhone: String, pwd: String, pushId: String): Observable<UserInfo> {
         return userRepository.login(mobilePhone, pwd, pushId).convert()
     }
+
+    /**
+     * 忘记密码服务
+     */
+    override fun forgetPwd(mobilePhone: String, verifyCode: String): Observable<String> {
+        return userRepository.forgetPwd(mobilePhone, verifyCode).convert()
+    }
+
+    /**
+     * 重置密码服务
+     */
+    override fun resetPwd(mobilePhone: String, pwd: String): Observable<String> {
+        return userRepository.resetPwd(mobilePhone, pwd).convert()
+    }
 }

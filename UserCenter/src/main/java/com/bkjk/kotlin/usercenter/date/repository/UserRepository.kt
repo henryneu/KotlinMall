@@ -3,9 +3,7 @@ package com.bkjk.kotlin.usercenter.date.repository
 import com.bkjk.kotlin.baselibrary.data.net.RetrofitFactory
 import com.bkjk.kotlin.baselibrary.data.protocol.BaseResp
 import com.bkjk.kotlin.usercenter.date.api.UserApi
-import com.bkjk.kotlin.usercenter.date.protocol.LoginReq
-import com.bkjk.kotlin.usercenter.date.protocol.RegisterReq
-import com.bkjk.kotlin.usercenter.date.protocol.UserInfo
+import com.bkjk.kotlin.usercenter.date.protocol.*
 import io.reactivex.Observable
 import javax.inject.Inject
 
@@ -25,5 +23,22 @@ class UserRepository @Inject constructor() {
     fun login(mobilePhone:String, pwd: String, pushId: String) :Observable<BaseResp<UserInfo>> {
         return RetrofitFactory.instances.create(UserApi::class.java)
                 .login(LoginReq(mobilePhone, pwd, pushId))
+    }
+
+    /**
+     * 忘记密码服务
+     */
+    fun forgetPwd(mobilePhone:String, verifyCode: String) :Observable<BaseResp<String>> {
+        return RetrofitFactory.instances.create(UserApi::class.java)
+                .forgetPwd(ForgetPwdReq(mobilePhone, verifyCode))
+    }
+
+
+    /**
+     * 重置密码服务
+     */
+    fun resetPwd(mobilePhone:String, pwd: String) :Observable<BaseResp<String>> {
+        return RetrofitFactory.instances.create(UserApi::class.java)
+                .resetPwd(ResetPwdReq(mobilePhone, pwd))
     }
 }

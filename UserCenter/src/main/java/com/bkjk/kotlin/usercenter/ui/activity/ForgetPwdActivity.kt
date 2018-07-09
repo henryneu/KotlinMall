@@ -3,25 +3,23 @@ package com.bkjk.kotlin.usercenter.ui.activity
 import android.os.Bundle
 import android.view.View
 import com.bkjk.kotlin.baselibrary.ext.enable
-import com.bkjk.kotlin.baselibrary.ext.onClick
 import com.bkjk.kotlin.baselibrary.ui.activity.BaseMVPActivity
 import com.bkjk.kotlin.usercenter.R
-import com.bkjk.kotlin.usercenter.date.protocol.UserInfo
 import com.bkjk.kotlin.usercenter.injection.component.DaggerUserComponent
 import com.bkjk.kotlin.usercenter.injection.module.UserModule
-import com.bkjk.kotlin.usercenter.presenter.LoginPresenter
-import com.bkjk.kotlin.usercenter.presenter.view.LoginView
-import kotlinx.android.synthetic.main.activity_login.*
+import com.bkjk.kotlin.usercenter.presenter.ForgetPwdPresenter
+import com.bkjk.kotlin.usercenter.presenter.view.ForgetPwdView
+import kotlinx.android.synthetic.main.activity_forget_pwd.*
 import org.jetbrains.anko.startActivity
 
 /**
- * 登录界面
+ * 忘记密码界面
  */
-class LoginActivity: BaseMVPActivity<LoginPresenter>(), LoginView, View.OnClickListener {
+class ForgetPwdActivity: BaseMVPActivity<ForgetPwdPresenter>(), ForgetPwdView, View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_forget_pwd)
 
         /** 初始化布局 */
         initView()
@@ -31,21 +29,19 @@ class LoginActivity: BaseMVPActivity<LoginPresenter>(), LoginView, View.OnClickL
      * 初始化布局
      */
     private fun initView() {
-        mHeaderBar.getTitleView().text = resources.getString(R.string.user_center_s_login_in)
-        mHeaderBar.getRightView().text = resources.getString(R.string.user_center_s_register_btn)
-        mHeaderBar.getRightView().visibility = View.VISIBLE
-        mHeaderBar.getRightView().onClick(this)
+        mHeaderBar.getTitleView().text = resources.getString(R.string.user_center_s_forgeted_pwd)
 
-        mLoginBtn.setOnClickListener(this)
+        mVerifyCodeBtn.setOnClickListener(this)
+        mNextStepBtn.setOnClickListener(this)
 
-        mLoginBtn.enable(mMobileEt, {isBtnEnabled()})
-        mLoginBtn.enable(mPwdEt, {isBtnEnabled()})
+        mNextStepBtn.enable(mMobileEt, {isBtnEnabled()})
+        mNextStepBtn.enable(mVerifyCodeEt, {isBtnEnabled()})
     }
 
     /**
-     * 登录回调
+     * 忘记密码回调
      */
-    override fun onLoginResult(result: UserInfo) {
+    override fun onForgetPwdResult(result: String) {
 
     }
 
@@ -67,7 +63,7 @@ class LoginActivity: BaseMVPActivity<LoginPresenter>(), LoginView, View.OnClickL
         when(view.id) {
             R.id.mHeaderBarRt -> {startActivity<RegisterActivity>()}
             R.id.mLoginBtn -> {
-                mPresenter.login(mMobileEt.text.toString(), mPwdEt.text.toString(), "")
+                mPresenter.forgetPwd(mMobileEt.text.toString(), mVerifyCodeEt.text.toString())
             }
         }
     }
@@ -77,6 +73,6 @@ class LoginActivity: BaseMVPActivity<LoginPresenter>(), LoginView, View.OnClickL
      */
     private fun isBtnEnabled(): Boolean {
         return mMobileEt.text.isNullOrEmpty().not() &&
-                mPwdEt.text.isNullOrEmpty().not()
+                mVerifyCodeEt.text.isNullOrEmpty().not()
     }
 }

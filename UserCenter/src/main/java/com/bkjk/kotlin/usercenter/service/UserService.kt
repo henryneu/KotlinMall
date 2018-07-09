@@ -14,4 +14,14 @@ interface UserService {
      * 登录服务
      */
     fun login(mobilePhone:String, pwd: String, pushId: String): Observable<UserInfo>
+
+    /**
+     * 忘记密码服务
+     */
+    fun forgetPwd(mobilePhone:String, verifyCode: String): Observable<String>
+
+    /**
+     * 重置密码服务
+     */
+    fun resetPwd(mobilePhone:String, pwd: String): Observable<String>
 }

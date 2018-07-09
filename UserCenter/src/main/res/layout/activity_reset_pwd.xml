@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchMatch.Vertical.Common"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.bkjk.kotlin.baselibrary.widgets.HeaderBar
+        android:id="@+id/mHeaderBar"
+        app:isShowBack="true"
+        style="@style/MatchWrap" />
+
+    <LinearLayout
+        style="@style/MatchWrap.Vertical"
+        android:background="@drawable/border_corner_all"
+        android:layout_margin="@dimen/common_margin" >
+
+        <EditText
+            android:id="@+id/mPwdEt"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_line_height"
+            android:paddingStart="@dimen/common_padding_small"
+            android:drawableStart="@drawable/user_pwd_icon"
+            android:drawablePadding="@dimen/common_padding_small"
+            android:hint="@string/user_center_s_pwd_code"
+            android:inputType="phone" />
+
+        <View
+            style="@style/DividerFixedHeight" />
+
+        <EditText
+            android:id="@+id/mPwdConfirmEt"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:paddingStart="@dimen/common_margin_small"
+            android:layout_height="@dimen/common_line_height"
+            android:drawableStart="@drawable/user_pwd_icon"
+            android:drawablePadding="@dimen/common_margin_small"
+            android:hint="@string/user_center_s_input_pwd_again"
+            android:inputType="number" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/mConfirmBtn"
+        style="@style/FullBtnStyle"
+        android:text="@string/user_center_s_confirm" />
+
+</LinearLayout>
