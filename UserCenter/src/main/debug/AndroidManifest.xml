@@ -32,6 +32,9 @@
         <activity android:name=".ui.activity.ResetPwdActivity">
         </activity>
 
+        <activity android:name=".ui.activity.UserInfoActivity">
+        </activity>
+
     </application>
 
 </manifest>

@@ -36,6 +36,7 @@ class LoginActivity: BaseMVPActivity<LoginPresenter>(), LoginView, View.OnClickL
         mHeaderBar.getRightView().text = resources.getString(R.string.user_center_s_register_btn)
         mHeaderBar.getRightView().visibility = View.VISIBLE
         mHeaderBar.getRightView().onClick(this)
+        mHeaderBar.getLeftView().onClick(this)
 
         mLoginBtn.setOnClickListener(this)
         mForgetPwdTv.setOnClickListener(this)
@@ -67,6 +68,8 @@ class LoginActivity: BaseMVPActivity<LoginPresenter>(), LoginView, View.OnClickL
      */
     override fun onClick(view: View) {
         when(view.id) {
+            // 测试使用
+            R.id.mHeaderBarIv -> {startActivity<UserInfoActivity>()}
             R.id.mHeaderBarRt -> {startActivity<RegisterActivity>()}
             R.id.mForgetPwdTv -> {startActivity<ForgetPwdActivity>()}
             R.id.mLoginBtn -> {

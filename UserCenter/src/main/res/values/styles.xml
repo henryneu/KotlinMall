@@ -1,3 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- 用户信息单行 -->
+    <style name="user_info_line_style">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/common_line_height</item>
+        <item name="android:background">@drawable/border_bottom</item>
+        <item name="android:paddingLeft">@dimen/common_padding</item>
+        <item name="android:paddingRight">@dimen/common_padding</item>
+        
+    </style>
+
+    <!-- 用户信息标签区域 -->
+    <style name="user_info_label_style">
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textSize">@dimen/text_big_size</item>
+        <item name="android:textColor">#ff868686</item>
+
+    </style>
+
+    <!-- 用户信息内容区域 -->
+    <style name="user_info_content_style" parent="@style/user_info_label_style">
+
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:textSize">@dimen/text_middle_size</item>
+        <item name="android:textColor">@color/text_normal</item>
+
+    </style>
+
+    <!-- 用户性别 RadioButton 内容区域 -->
+    <style name="user_info_gender_style">
+
+        <item name="android:layout_width">@dimen/gender_content_width_height</item>
+        <item name="android:layout_height">@dimen/gender_content_width_height</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/user_gender_bg_selector</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">@dimen/text_middle_size</item>
+        <item name="android:textColor">@drawable/user_gender_text_selector</item>
+
+    </style>
 
 </resources>

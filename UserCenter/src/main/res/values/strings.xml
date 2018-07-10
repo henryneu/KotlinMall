@@ -21,4 +21,15 @@
     <string name="user_center_s_next_step">下一步</string>
     <string name="user_center_s_input_pwd_again">请再次输入密码</string>
     <string name="user_center_s_confirm">确认</string>
+    <string name="user_center_s_user_information">个人信息</string>
+    <string name="user_center_s_head_portrait">头像</string>
+    <string name="user_center_s_save">保存</string>
+    <string name="user_center_s_nick_name">昵称</string>
+    <string name="user_center_s_nick_name_hint">请称呼我</string>
+    <string name="user_center_s_gender">性别</string>
+    <string name="user_center_s_gender_man">男</string>
+    <string name="user_center_s_gender_women">女</string>
+    <string name="user_center_s_mobile_phone">手机</string>
+    <string name="user_center_s_signature">签名</string>
+    <string name="user_center_s_input_signature">请您填写签名</string>
 </resources>

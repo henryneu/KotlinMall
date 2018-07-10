@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="gender_content_width_height">28dp</dimen>
+    <dimen name="head_portrait_margin_end">20dp</dimen>
+    <dimen name="head_portrait_line_height">70dp</dimen>
+    <dimen name="head_portrait_width_height">55dp</dimen>
+
+</resources>
