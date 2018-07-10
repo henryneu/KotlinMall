@@ -26,6 +26,12 @@
         <activity android:name=".ui.activity.RegisterActivity">
         </activity>
 
+        <activity android:name=".ui.activity.ForgetPwdActivity">
+        </activity>
+
+        <activity android:name=".ui.activity.ResetPwdActivity">
+        </activity>
+
     </application>
 
 </manifest>

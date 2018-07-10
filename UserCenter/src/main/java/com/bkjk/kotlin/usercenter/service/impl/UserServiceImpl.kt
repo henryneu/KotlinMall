@@ -32,14 +32,14 @@ class UserServiceImpl @Inject constructor(): UserService {
     /**
      * 忘记密码服务
      */
-    override fun forgetPwd(mobilePhone: String, verifyCode: String): Observable<String> {
-        return userRepository.forgetPwd(mobilePhone, verifyCode).convert()
+    override fun forgetPwd(mobilePhone: String, verifyCode: String): Observable<Boolean> {
+        return userRepository.forgetPwd(mobilePhone, verifyCode).convertBoolean()
     }
 
     /**
      * 重置密码服务
      */
-    override fun resetPwd(mobilePhone: String, pwd: String): Observable<String> {
-        return userRepository.resetPwd(mobilePhone, pwd).convert()
+    override fun resetPwd(mobilePhone: String, pwd: String): Observable<Boolean> {
+        return userRepository.resetPwd(mobilePhone, pwd).convertBoolean()
     }
 }

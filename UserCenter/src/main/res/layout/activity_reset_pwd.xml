@@ -22,7 +22,7 @@
             android:drawableStart="@drawable/user_pwd_icon"
             android:drawablePadding="@dimen/common_padding_small"
             android:hint="@string/user_center_s_pwd_code"
-            android:inputType="phone" />
+            android:inputType="textPassword" />
 
         <View
             style="@style/DividerFixedHeight" />
@@ -36,7 +36,7 @@
             android:drawableStart="@drawable/user_pwd_icon"
             android:drawablePadding="@dimen/common_margin_small"
             android:hint="@string/user_center_s_input_pwd_again"
-            android:inputType="number" />
+            android:inputType="textPassword" />
 
     </LinearLayout>
 

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import com.bkjk.kotlin.baselibrary.ext.enable
 import com.bkjk.kotlin.baselibrary.ui.activity.BaseMVPActivity
+import com.bkjk.kotlin.baselibrary.utils.PhoneNumUtils
 import com.bkjk.kotlin.usercenter.R
 import com.bkjk.kotlin.usercenter.injection.component.DaggerUserComponent
 import com.bkjk.kotlin.usercenter.injection.module.UserModule
@@ -11,6 +12,7 @@ import com.bkjk.kotlin.usercenter.presenter.ForgetPwdPresenter
 import com.bkjk.kotlin.usercenter.presenter.view.ForgetPwdView
 import kotlinx.android.synthetic.main.activity_forget_pwd.*
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.toast
 
 /**
  * 忘记密码界面
@@ -42,7 +44,8 @@ class ForgetPwdActivity: BaseMVPActivity<ForgetPwdPresenter>(), ForgetPwdView, V
      * 忘记密码回调
      */
     override fun onForgetPwdResult(result: String) {
-
+        toast(result)
+        // startActivity<ResetPwdActivity>("phone_num" to mMobileEt.text.toString())
     }
 
     /**
@@ -61,8 +64,19 @@ class ForgetPwdActivity: BaseMVPActivity<ForgetPwdPresenter>(), ForgetPwdView, V
      */
     override fun onClick(view: View) {
         when(view.id) {
-            R.id.mHeaderBarRt -> {startActivity<RegisterActivity>()}
-            R.id.mLoginBtn -> {
+            R.id.mVerifyCodeBtn -> {
+                val phoneNum = mMobileEt.text
+                if (phoneNum.isNullOrEmpty()) {
+                    toast(resources.getString(R.string.user_center_s_phone_num_not_null))
+                } else if (!PhoneNumUtils.checkPhoneNum(phoneNum.toString())) {
+                    toast(resources.getString(R.string.user_center_s_regex_phone_num))
+                } else {
+                    mVerifyCodeBtn.requestSendVerifyNumber()
+                    toast(resources.getString(R.string.user_center_s_send_phone_success))
+                }
+            }
+            R.id.mNextStepBtn -> {
+                startActivity<ResetPwdActivity>("phone_num" to mMobileEt.text.toString())
                 mPresenter.forgetPwd(mMobileEt.text.toString(), mVerifyCodeEt.text.toString())
             }
         }

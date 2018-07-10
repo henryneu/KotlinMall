@@ -13,6 +13,7 @@ import com.bkjk.kotlin.usercenter.presenter.LoginPresenter
 import com.bkjk.kotlin.usercenter.presenter.view.LoginView
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.toast
 
 /**
  * 登录界面
@@ -37,6 +38,7 @@ class LoginActivity: BaseMVPActivity<LoginPresenter>(), LoginView, View.OnClickL
         mHeaderBar.getRightView().onClick(this)
 
         mLoginBtn.setOnClickListener(this)
+        mForgetPwdTv.setOnClickListener(this)
 
         mLoginBtn.enable(mMobileEt, {isBtnEnabled()})
         mLoginBtn.enable(mPwdEt, {isBtnEnabled()})
@@ -46,7 +48,7 @@ class LoginActivity: BaseMVPActivity<LoginPresenter>(), LoginView, View.OnClickL
      * 登录回调
      */
     override fun onLoginResult(result: UserInfo) {
-
+        toast(resources.getString(R.string.user_center_s_login_success))
     }
 
     /**
@@ -66,6 +68,7 @@ class LoginActivity: BaseMVPActivity<LoginPresenter>(), LoginView, View.OnClickL
     override fun onClick(view: View) {
         when(view.id) {
             R.id.mHeaderBarRt -> {startActivity<RegisterActivity>()}
+            R.id.mForgetPwdTv -> {startActivity<ForgetPwdActivity>()}
             R.id.mLoginBtn -> {
                 mPresenter.login(mMobileEt.text.toString(), mPwdEt.text.toString(), "")
             }

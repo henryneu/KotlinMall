@@ -18,10 +18,10 @@ interface UserService {
     /**
      * 忘记密码服务
      */
-    fun forgetPwd(mobilePhone:String, verifyCode: String): Observable<String>
+    fun forgetPwd(mobilePhone:String, verifyCode: String): Observable<Boolean>
 
     /**
      * 重置密码服务
      */
-    fun resetPwd(mobilePhone:String, pwd: String): Observable<String>
+    fun resetPwd(mobilePhone:String, pwd: String): Observable<Boolean>
 }

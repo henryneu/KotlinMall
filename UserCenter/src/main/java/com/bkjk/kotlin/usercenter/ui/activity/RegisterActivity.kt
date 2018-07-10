@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.Toast
 import com.bkjk.kotlin.baselibrary.ext.enable
 import com.bkjk.kotlin.baselibrary.ui.activity.BaseMVPActivity
+import com.bkjk.kotlin.baselibrary.utils.PhoneNumUtils
 import com.bkjk.kotlin.usercenter.R
 import com.bkjk.kotlin.usercenter.injection.component.DaggerUserComponent
 import com.bkjk.kotlin.usercenter.injection.module.UserModule
@@ -80,17 +81,16 @@ class RegisterActivity : BaseMVPActivity<RegisterPresenter>(), RegisterView, Vie
     override fun onClick(view: View) {
         when(view.id) {
             R.id.mRegisterBtn -> {
-                if (mPwdEt.text.toString().equals(mPwdConfirmEt.text.toString())) {
-                    mPresenter.onRegister(mMobileEt.text.toString(), mVerifyCodeEt.text.toString(), mPwdEt.text.toString())
-                } else {
+                if (!mPwdEt.text.toString().equals(mPwdConfirmEt.text.toString())) {
                     toast(resources.getString(R.string.user_center_s_pwd_not_conformity))
                 }
+                mPresenter.onRegister(mMobileEt.text.toString(), mVerifyCodeEt.text.toString(), mPwdEt.text.toString())
             }
             R.id.mVerifyCodeBtn -> {
                 val phoneNum = mMobileEt.text
                 if (phoneNum.isNullOrEmpty()) {
                     toast(resources.getString(R.string.user_center_s_phone_num_not_null))
-                } else if (!checkPhoneNum(phoneNum.toString())) {
+                } else if (!PhoneNumUtils.checkPhoneNum(phoneNum.toString())) {
                     toast(resources.getString(R.string.user_center_s_regex_phone_num))
                 } else {
                     mVerifyCodeBtn.requestSendVerifyNumber()
@@ -108,24 +108,5 @@ class RegisterActivity : BaseMVPActivity<RegisterPresenter>(), RegisterView, Vie
                 mVerifyCodeEt.text.isNullOrEmpty().not() &&
                 mPwdEt.text.isNullOrEmpty().not() &&
                 mPwdConfirmEt.text.isNullOrEmpty().not()
-    }
-
-    /***
-     * 手机号码正则检测
-     * <p>移动：134(0-8)、135、136、137、138、139、147、150、151、152、157、158、159、178、182、183、184、187、188、198</p>
-     * <p>联通：130、131、132、145、155、156、175、176、185、186、166</p>
-     * <p>电信：133、153、173、177、180、181、189、199</p>
-     * <p>全球星：1349</p>
-     * <p>虚拟运营商：170</p>
-     *
-     * @param  手机号码
-     *
-     * @return 是否匹配
-     */
-    private fun checkPhoneNum(num: String): Boolean {
-        val regExp = "^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\\d{8}$"
-        val p = Pattern.compile(regExp)
-        val m = p.matcher(num)
-        return m.matches()
     }
 }
