@@ -75,11 +75,17 @@ dependencies {
     compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.1'
 
     // Recyclerview
-    compile "com.android.support:recyclerview-v7:26.1.0"
+    compile 'com.android.support:recyclerview-v7:26.1.0'
 
     // Glide
-    compile "com.github.bumptech.glide:glide:3.7.0"
+    compile 'com.github.bumptech.glide:glide:3.7.0'
 
     // Circle ImageView
-    compile "de.hdodenhof:circleimageview:2.2.0"
+    compile 'de.hdodenhof:circleimageview:2.2.0'
+
+    // TakePhoto
+    compile 'com.jph.takephoto:takephoto_library:4.0.3'
+
+    // Alert View
+    compile 'com.bigkoo:alertview:1.0.3'
 }
