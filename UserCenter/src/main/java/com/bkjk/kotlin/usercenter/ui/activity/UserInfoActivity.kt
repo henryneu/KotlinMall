@@ -7,10 +7,13 @@ import android.os.Environment
 import android.view.View
 import com.bigkoo.alertview.AlertView
 import com.bigkoo.alertview.OnItemClickListener
+import com.bkjk.kotlin.baselibrary.common.BaseConstant
 import com.bkjk.kotlin.baselibrary.ext.onClick
 import com.bkjk.kotlin.baselibrary.ui.activity.BaseMVPActivity
 import com.bkjk.kotlin.baselibrary.utils.DateUtils
+import com.bkjk.kotlin.baselibrary.utils.GlideUtils
 import com.bkjk.kotlin.usercenter.R
+import com.bkjk.kotlin.usercenter.date.protocol.UserInfo
 import com.bkjk.kotlin.usercenter.injection.component.DaggerUserComponent
 import com.bkjk.kotlin.usercenter.injection.module.UserModule
 import com.bkjk.kotlin.usercenter.presenter.UserInfoPresenter
@@ -23,7 +26,11 @@ import com.jph.takephoto.model.TContextWrap
 import com.jph.takephoto.model.TResult
 import com.jph.takephoto.permission.InvokeListener
 import com.jph.takephoto.permission.PermissionManager
+import com.qiniu.android.http.ResponseInfo
+import com.qiniu.android.storage.UpCompletionHandler
+import com.qiniu.android.storage.UploadManager
 import kotlinx.android.synthetic.main.activity_user_info.*
+import org.json.JSONObject
 import java.io.File
 
 /**
@@ -35,6 +42,10 @@ class UserInfoActivity: BaseMVPActivity<UserInfoPresenter>(), UserInfoView, View
     private lateinit var mTakePhoto: TakePhoto
     private lateinit var mTempFile: File
     // private lateinit var invokeParam: InvokeParam
+    private lateinit var mLocalFileUrl: String
+    private lateinit var mRemoteFileUrl: String
+
+    private val mUploadManager by lazy { UploadManager() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -106,6 +117,25 @@ class UserInfoActivity: BaseMVPActivity<UserInfoPresenter>(), UserInfoView, View
         when(view.id) {
 
         }
+    }
+
+    /**
+     * 获取上传所需 Token 凭证
+     */
+    override fun onGetUploadTokenResult(result: String) {
+        mUploadManager.put(mLocalFileUrl, null, result, object : UpCompletionHandler{
+            override fun complete(key: String?, info: ResponseInfo?, response: JSONObject?) {
+                mRemoteFileUrl = BaseConstant.IMAGE_SERVER_ADDRESS + response?.get("hash")
+                GlideUtils.loadImage(this@UserInfoActivity, mRemoteFileUrl, mUserIconIv)
+            }
+        }, null)
+    }
+
+    /**
+     * 编辑用户资料回调
+     */
+    override fun onEditUserResult(result: UserInfo) {
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
