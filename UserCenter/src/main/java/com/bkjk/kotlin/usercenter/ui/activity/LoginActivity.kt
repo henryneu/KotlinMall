@@ -5,12 +5,14 @@ import android.view.View
 import com.bkjk.kotlin.baselibrary.ext.enable
 import com.bkjk.kotlin.baselibrary.ext.onClick
 import com.bkjk.kotlin.baselibrary.ui.activity.BaseMVPActivity
+import com.bkjk.kotlin.baselibrary.utils.SPUtils
 import com.bkjk.kotlin.usercenter.R
 import com.bkjk.kotlin.usercenter.date.protocol.UserInfo
 import com.bkjk.kotlin.usercenter.injection.component.DaggerUserComponent
 import com.bkjk.kotlin.usercenter.injection.module.UserModule
 import com.bkjk.kotlin.usercenter.presenter.LoginPresenter
 import com.bkjk.kotlin.usercenter.presenter.view.LoginView
+import com.bkjk.kotlin.usercenter.utils.UserPrefsUtils
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
@@ -50,6 +52,8 @@ class LoginActivity: BaseMVPActivity<LoginPresenter>(), LoginView, View.OnClickL
      */
     override fun onLoginResult(result: UserInfo) {
         toast(resources.getString(R.string.user_center_s_login_success))
+        // 登录成功后存储用户信息
+        UserPrefsUtils.putUserInfo(result)
     }
 
     /**

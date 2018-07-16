@@ -89,6 +89,9 @@ dependencies {
     // Alert View
     compile 'com.bigkoo:alertview:1.0.3'
 
-    //七牛
+    // 七牛
     compile 'com.qiniu:qiniu-android-sdk:7.3.+'
+
+    // Bottom Navigation
+    compile 'com.ashokvarma.android:bottom-navigation-bar:2.0.4'
 }

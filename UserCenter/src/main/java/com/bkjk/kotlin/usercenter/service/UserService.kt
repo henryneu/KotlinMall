@@ -24,4 +24,9 @@ interface UserService {
      * 重置密码服务
      */
     fun resetPwd(mobilePhone:String, pwd: String): Observable<Boolean>
+
+    /**
+     * 修改用户信息服务
+     */
+    fun editUser(userIcon: String, userName: String, userGender: String, userSignature: String): Observable<UserInfo>
 }
