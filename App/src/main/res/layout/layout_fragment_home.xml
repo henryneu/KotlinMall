@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchMatch.Vertical" >
+
+    <LinearLayout
+        style="@style/SearchHeaderStyle"
+        android:paddingLeft="@dimen/common_padding" >
+
+        <EditText
+            android:id="@+id/mHomeSearchEt"
+            style="@style/SearchHeaderEtStyle"
+            android:cursorVisible="false"
+            android:hint="搜索商品/品类"
+            android:editable="false" />
+
+        <ImageView
+            android:id="@+id/mHomeScanImg"
+            style="@style/WrapWrap"
+            android:src="@mipmap/home_scan_icon"/>
+
+    </LinearLayout>
+
+    <com.youth.banner.Banner
+        android:id="@+id/mHomeFragBanner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/home_banner_height" />
+
+    <com.bkjk.kotlin.messagecenter.widgets.NewsFlipperView
+        android:id="@+id/mNewsFlipperView"
+        style="@style/MatchWrap"
+        android:layout_marginLeft="@dimen/common_margin_middle"
+        android:layout_marginTop="@dimen/common_margin_small"
+        android:layout_marginRight="@dimen/common_margin_middle"
+        android:layout_marginBottom="@dimen/common_margin_small"/>
+
+</LinearLayout>

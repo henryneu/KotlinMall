@@ -94,4 +94,6 @@ dependencies {
 
     // Bottom Navigation
     compile 'com.ashokvarma.android:bottom-navigation-bar:2.0.4'
+    // Banner
+    compile 'com.youth.banner:banner:1.4.10'
 }

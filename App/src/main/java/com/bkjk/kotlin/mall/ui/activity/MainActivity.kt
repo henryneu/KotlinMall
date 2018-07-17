@@ -1,26 +1,26 @@
 package com.bkjk.kotlin.mall.ui.activity
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.bkjk.kotlin.baselibrary.ui.activity.BaseActivity
 import com.bkjk.kotlin.mall.R
-import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
+import com.bkjk.kotlin.mall.ui.fragment.HomeFragment
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.concurrent.TimeUnit
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
+
+    private val mHomeFragment by lazy { HomeFragment() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mBottomNavBar.checkCartBadge(20)
 
-        Observable.timer(2, TimeUnit.SECONDS)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({mBottomNavBar.checkMsgBadge(true)})
+        initView()
+    }
 
-        Observable.timer(4, TimeUnit.SECONDS)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({mBottomNavBar.checkCartBadge(0)})
+    private fun initView() {
+        val manager = supportFragmentManager.beginTransaction()
+        manager.add(R.id.mHomeContainer, mHomeFragment)
+        manager.commit()
     }
 }
