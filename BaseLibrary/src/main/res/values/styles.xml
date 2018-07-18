@@ -89,4 +89,12 @@
         <item name="android:drawablePadding">@dimen/common_padding_small</item>
     </style>
 
+    <!-- 通用列表样式-->
+    <style name="CommonRecyclerView">
+        <item name="android:scrollbars">none</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:overScrollMode">never</item>
+    </style>
+
 </resources>

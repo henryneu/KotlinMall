@@ -2,5 +2,13 @@
 <resources>
 
     <dimen name="home_banner_height">150dp</dimen>
+    <dimen name="home_discount_img_height">71dp</dimen>
+    <dimen name="home_discount_img_width">71dp</dimen>
+    <dimen name="home_gallery_pager_width">200dp</dimen>
+    <dimen name="home_gallery_pager_height">160dp</dimen>
+    <dimen name="home_gallery_img_width">200dp</dimen>
+    <dimen name="home_gallery_img_height">120dp</dimen>
+
+    <dimen name="text_smaller_size">10sp</dimen>
 
 </resources>

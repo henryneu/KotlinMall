@@ -4,10 +4,12 @@ import android.text.Editable
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import com.bkjk.kotlin.baselibrary.data.protocol.BaseResp
 import com.bkjk.kotlin.baselibrary.rx.BaseFunction
 import com.bkjk.kotlin.baselibrary.rx.BaseFunctionBoolean
 import com.bkjk.kotlin.baselibrary.rx.BaseObserver
+import com.bkjk.kotlin.baselibrary.utils.GlideUtils
 import com.bkjk.kotlin.baselibrary.widgets.DefaultTextWatcher
 import com.trello.rxlifecycle2.LifecycleProvider
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -44,4 +46,11 @@ fun Button.enable(editText: EditText, method: () -> Boolean) {
             mRegisterBtn.isEnabled = method()
         }
     })
+}
+
+/**
+ * ImageView 加载网络图片
+ */
+fun ImageView.loadUrl(url: String) {
+    GlideUtils.loadUrlImage(context, url, this)
 }

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">KotlinMall</string>
+    <string name="home_special_discount">火爆进行中</string>
+    <string name="home_discount_label">折扣</string>
+    <string name="home_gallery_title">爱生活</string>
+    <string name="home_gallery_details">有品有范有时尚</string>
 </resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/WrapWrap.Vertical"
+    android:paddingEnd="@dimen/common_padding"
+    android:gravity="center_horizontal" >
+
+    <RelativeLayout
+        android:layout_width="@dimen/home_discount_img_width"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/mDiscountGoodIm"
+            android:layout_width="@dimen/home_discount_img_width"
+            android:layout_height="@dimen/home_discount_img_height"
+            android:scaleType="fitXY" />
+
+        <jp.shts.android.library.TriangleLabelView
+            style="@style/WrapWrap"
+            app:backgroundColor="@color/common_red"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            app:primaryText="@string/home_discount_label"
+            app:primaryTextSize="10.0sp"
+            app:labelTopPadding="10.0dip"
+            app:labelCenterPadding="0.0dip"
+            app:labelBottomPadding="5.0dip"
+            app:corner="rightTop" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/mDiscountAfterTv"
+        style="@style/WrapWrap"
+        android:layout_marginTop="@dimen/common_margin_small"
+        android:textSize="@dimen/text_small_size"
+        android:textColor="@color/common_red" />
+
+    <TextView
+        android:id="@+id/mDiscountBeforeTv"
+        style="@style/WrapWrap"
+        android:textSize="@dimen/text_smaller_size"
+        android:textColor="@color/common_disable" />
+
+</LinearLayout>

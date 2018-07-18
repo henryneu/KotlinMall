@@ -34,4 +34,40 @@
         android:layout_marginRight="@dimen/common_margin_middle"
         android:layout_marginBottom="@dimen/common_margin_small"/>
 
+    <TextView
+        style="@style/MatchWrap"
+        android:background="@color/common_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/common_margin"
+        android:paddingTop="@dimen/common_padding_small"
+        android:paddingBottom="@dimen/common_margin_small"
+        android:text="@string/home_special_discount"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_small_size"
+        android:textColor="@color/text_light_dark"
+        android:drawableLeft="@mipmap/home_special_icon"
+        android:drawablePadding="@dimen/common_padding_small" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/mHomeDiscountRv"
+        style="@style/CommonRecyclerView"
+        android:background="@color/common_white"
+        android:paddingLeft="@dimen/common_padding_middle"
+        android:paddingRight="@dimen/common_padding_middle"
+        android:paddingBottom="@dimen/common_padding_small" />
+
+    <me.crosswall.lib.coverflow.core.PagerContainer
+        android:id="@+id/mGalleryContainer"
+        style="@style/MatchMatch"
+        android:background="@mipmap/home_gallery_container_bg" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/mGalleryVp"
+            android:layout_width="@dimen/home_gallery_pager_width"
+            android:layout_height="@dimen/home_gallery_pager_height"
+            android:layout_gravity="center"
+            android:overScrollMode="never" />
+
+    </me.crosswall.lib.coverflow.core.PagerContainer>
+
 </LinearLayout>
