@@ -9,8 +9,8 @@
     android:background="@drawable/corner_news_bg"
     android:paddingStart="@dimen/common_padding_middle"
     android:paddingEnd="@dimen/common_margin_small"
-    android:paddingTop="@dimen/common_padding_small"
-    android:paddingBottom="@dimen/common_padding_small" >
+    android:paddingTop="@dimen/common_padding_middle"
+    android:paddingBottom="@dimen/common_padding_middle" >
 
     <ImageView
         style="@style/WrapMatch"

@@ -1,7 +1,16 @@
 <resources>
     <string name="app_name">KotlinMall</string>
+    <string name="home_header_search_hint">搜索商品/品类</string>
     <string name="home_special_discount">火爆进行中</string>
     <string name="home_discount_label">折扣</string>
     <string name="home_gallery_title">爱生活</string>
     <string name="home_gallery_details">有品有范有时尚</string>
+    <string name="mine_un_login_text">登录/注册</string>
+    <string name="mine_awaiting_payment_text">待付款</string>
+    <string name="mine_awaiting_delivery_text">待收货</string>
+    <string name="mine_completed_text">已完成</string>
+    <string name="mine_order_text">我的订单</string>
+    <string name="mine_receiving_management_text">收货管理</string>
+    <string name="mine_share_text">分享</string>
+    <string name="mine_setting_text">设置</string>
 </resources>

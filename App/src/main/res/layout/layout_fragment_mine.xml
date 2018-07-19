@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchMatch.Vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150.0dip"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_me_header" >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/mUserIconIv"
+            android:layout_width="@dimen/common_icon_width"
+            android:layout_height="@dimen/common_icon_height"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/common_margin"
+            android:src="@drawable/default_user_icon" />
+
+        <TextView
+            android:id="@+id/mUserNameTv"
+            style="@style/WrapWrap"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/common_margin"
+            android:text="@string/mine_un_login_text"
+            android:textSize="@dimen/text_big_size"
+            android:textColor="@color/common_white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/MatchWrap.Horizontal"
+        android:background="@drawable/border_bottom"
+        android:paddingTop="@dimen/common_padding_middle"
+        android:paddingBottom="@dimen/common_padding_middle" >
+
+        <TextView
+            android:id="@+id/mWaitPayOrderTv"
+            style="@style/MeOrderLabelStyle"
+            android:text="@string/mine_awaiting_payment_text"
+            android:drawableTop="@drawable/icon_order_wait_pay" />
+
+        <TextView
+            android:id="@+id/mWaitConfirmOrderTv"
+            style="@style/MeOrderLabelStyle"
+            android:text="@string/mine_awaiting_delivery_text"
+            android:drawableTop="@drawable/icon_order_wait_confirm" />
+
+        <TextView
+            android:id="@+id/mCompleteOrderTv"
+            style="@style/MeOrderLabelStyle"
+            android:text="@string/mine_completed_text"
+            android:drawableTop="@drawable/icon_order_completed" />
+
+        <View style="@style/DividerFixedWidth" />
+
+        <TextView
+            android:id="@+id/mAllOrderTv"
+            style="@style/MeOrderLabelStyle"
+            android:text="@string/mine_order_text"
+            android:drawableTop="@drawable/icon_order" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/mAddressTv"
+        style="@style/MeItemStyle"
+        android:background="@drawable/border_all"
+        android:layout_marginTop="@dimen/common_margin"
+        android:text="@string/mine_receiving_management_text"
+        android:drawableStart="@drawable/icon_address" />
+
+    <TextView
+        android:id="@+id/mShareTv"
+        style="@style/MeItemStyle"
+        android:background="@drawable/border_all"
+        android:text="@string/mine_share_text"
+        android:drawableStart="@drawable/icon_share" />
+
+    <TextView
+        android:id="@+id/mSettingTv"
+        style="@style/MeItemStyle"
+        android:background="@drawable/border_all"
+        android:text="@string/mine_setting_text"
+        android:drawableStart="@drawable/icon_setting" />
+
+</LinearLayout>

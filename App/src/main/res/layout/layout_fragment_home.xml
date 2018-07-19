@@ -11,13 +11,13 @@
             android:id="@+id/mHomeSearchEt"
             style="@style/SearchHeaderEtStyle"
             android:cursorVisible="false"
-            android:hint="搜索商品/品类"
+            android:hint="@string/home_header_search_hint"
             android:editable="false" />
 
         <ImageView
             android:id="@+id/mHomeScanImg"
             style="@style/WrapWrap"
-            android:src="@mipmap/home_scan_icon"/>
+            android:src="@mipmap/home_scan_icon" />
 
     </LinearLayout>
 
@@ -32,20 +32,20 @@
         android:layout_marginLeft="@dimen/common_margin_middle"
         android:layout_marginTop="@dimen/common_margin_small"
         android:layout_marginRight="@dimen/common_margin_middle"
-        android:layout_marginBottom="@dimen/common_margin_small"/>
+        android:layout_marginBottom="@dimen/common_margin_small" />
 
     <TextView
         style="@style/MatchWrap"
         android:background="@color/common_white"
         android:gravity="center_vertical"
-        android:paddingLeft="@dimen/common_margin"
+        android:paddingStart="@dimen/common_margin_middle"
         android:paddingTop="@dimen/common_padding_small"
         android:paddingBottom="@dimen/common_margin_small"
         android:text="@string/home_special_discount"
         android:textStyle="bold"
         android:textSize="@dimen/text_small_size"
         android:textColor="@color/text_light_dark"
-        android:drawableLeft="@mipmap/home_special_icon"
+        android:drawableStart="@mipmap/home_special_icon"
         android:drawablePadding="@dimen/common_padding_small" />
 
     <android.support.v7.widget.RecyclerView
