@@ -13,4 +13,8 @@
     <string name="mine_receiving_management_text">收货管理</string>
     <string name="mine_share_text">分享</string>
     <string name="mine_setting_text">设置</string>
+    <string name="mine_user_protocol_text">用户协议</string>
+    <string name="mine_feedback_text">反馈意见</string>
+    <string name="mine_about_text">关于</string>
+    <string name="mine_logout_text">退出登录</string>
 </resources>

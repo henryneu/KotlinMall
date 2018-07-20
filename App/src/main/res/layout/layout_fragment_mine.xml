@@ -29,7 +29,7 @@
 
     <LinearLayout
         style="@style/MatchWrap.Horizontal"
-        android:background="@drawable/border_bottom"
+        android:background="@drawable/border_all"
         android:paddingTop="@dimen/common_padding_middle"
         android:paddingBottom="@dimen/common_padding_middle" >
 

@@ -3,29 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/MatchMatch.Vertical">
 
-    <com.kotlin.base.widgets.HeaderBar
+    <com.bkjk.kotlin.baselibrary.widgets.HeaderBar
         style="@style/MatchWrap"
-        app:titleText="设置" />
+        app:titleText="@string/mine_setting_text" />
 
     <TextView
         android:id="@+id/mUserProtocolTv"
         style="@style/SettingItemStyle"
-        android:text="用户协议" />
+        android:text="@string/mine_user_protocol_text" />
 
     <TextView
         android:id="@+id/mFeedBackTv"
         style="@style/SettingItemStyle"
-        android:text="反馈意见" />
+        android:text="@string/mine_feedback_text" />
 
     <TextView
         android:id="@+id/mAboutTv"
         style="@style/SettingItemStyle"
-        android:text="关于" />
+        android:text="@string/mine_about_text" />
 
     <Button
         android:id="@+id/mLogoutBtn"
-        android:text="退出登录"
         style="@style/FullBtnStyle"
+        android:layout_marginTop="@dimen/common_margin"
+        android:text="@string/mine_logout_text"
         android:enabled="true" />
 
 </LinearLayout>
