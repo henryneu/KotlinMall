@@ -57,6 +57,7 @@ dependencies {
     api project(':Provider')
 
     implementation project(':MessageCenter')
+    implementation project(':GoodsCenter')
 
     if (isUserModel.toBoolean()) {
         implementation project(':UserCenter')

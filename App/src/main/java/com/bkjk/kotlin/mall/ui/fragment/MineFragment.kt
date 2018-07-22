@@ -54,7 +54,7 @@ class MineFragment: BaseFragment(), View.OnClickListener {
 
     override fun onClick(view: View) {
         when(view.id) {
-            R.id.mUserIconIv -> {
+            R.id.mUserIconIv,R.id.mUserNameTv -> {
                 if (isLogined()) {
                     startActivity<UserInfoActivity>()
                 } else {
