@@ -1,4 +1,4 @@
-package com.bkjk.kotlin.baselibrary.injection.module
+package com.bkjk.kotlin.baselibrary.injection
 
 import java.lang.annotation.Retention
 import javax.inject.Scope

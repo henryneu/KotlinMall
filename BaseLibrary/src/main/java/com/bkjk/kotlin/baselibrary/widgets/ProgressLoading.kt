@@ -11,11 +11,11 @@ import org.jetbrains.anko.find
 /**
  * 封装加载对话框
  */
-class ProgressLoading private constructor(context: Context, theme: Int): Dialog(context, theme) {
+class ProgressLoading private constructor(context: Context, theme: Int) : Dialog(context, theme) {
 
     companion object {
         private lateinit var mDialog: ProgressLoading
-        private lateinit var mDrawable: AnimationDrawable
+        private var mDrawable: AnimationDrawable? = null
 
         /**
          * 创建加载对话框
@@ -48,7 +48,7 @@ class ProgressLoading private constructor(context: Context, theme: Int): Dialog(
      */
     fun showLoading() {
         mDialog.show()
-        mDrawable.start()
+        mDrawable?.start()
     }
 
     /**
@@ -56,6 +56,6 @@ class ProgressLoading private constructor(context: Context, theme: Int): Dialog(
      */
     fun hideLoading() {
         mDialog.dismiss()
-        mDrawable.stop()
+        mDrawable?.stop()
     }
 }

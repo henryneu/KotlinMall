@@ -1,6 +1,7 @@
 package com.bkjk.infra.goodscenter.data.api
 
 import com.bkjk.infra.goodscenter.data.protocol.Category
+import com.bkjk.infra.goodscenter.data.protocol.GetCategoryReq
 import com.bkjk.kotlin.baselibrary.data.protocol.BaseResp
 import retrofit2.http.Body
 import retrofit2.http.POST
@@ -12,5 +13,5 @@ interface CategoryApi {
      * 获取商品种类服务
      */
     @POST("categoryCenter/getCategory")
-    fun getCategory(@Body parentId: Int) : Observable<BaseResp<MutableList<Category>?>>
+    fun getCategory(@Body req: GetCategoryReq) : Observable<BaseResp<MutableList<Category>?>>
 }

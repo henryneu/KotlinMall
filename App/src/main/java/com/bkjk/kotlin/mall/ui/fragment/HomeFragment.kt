@@ -62,7 +62,8 @@ class HomeFragment: BaseFragment() {
      * 初始化 ViewFlipper
      */
     private fun initNewsFlipper() {
-        mNewsFlipperView.setData(arrayOf("夏日炎炎，聚划算夏季大牌特惠抢多件更划算", "新用户立领1000元优惠券，满8000减1000大牌12期免息无忧", "抢199减100券，另直播送好礼两件半价"))
+        mNewsFlipperView.setData(arrayOf("夏日炎炎，聚划算夏季大牌特惠抢多件更划算",
+                "新用户立领1000元优惠券，满8000减1000大牌12期免息无忧", "抢199减100券，另直播送好礼两件半价"))
     }
 
     /**
@@ -75,14 +76,16 @@ class HomeFragment: BaseFragment() {
 
         val discountAdapter = HomeDiscountAdapter(activity)
         mHomeDiscountRv.adapter = discountAdapter
-        discountAdapter.setList(mutableListOf(HOME_DISCOUNT_ONE, HOME_DISCOUNT_TWO, HOME_DISCOUNT_THREE, HOME_DISCOUNT_FOUR, HOME_DISCOUNT_FIVE))
+        discountAdapter.setList(mutableListOf(HOME_DISCOUNT_ONE, HOME_DISCOUNT_TWO, HOME_DISCOUNT_THREE,
+                HOME_DISCOUNT_FOUR, HOME_DISCOUNT_FIVE))
     }
 
     /**
      * 初始化 Gallery
      */
     private fun initGallery() {
-        mGalleryVp.adapter = GalleryPagerAdapter(context, listOf(HOME_TOPIC_ONE, HOME_TOPIC_TWO, HOME_TOPIC_THREE, HOME_TOPIC_FOUR, HOME_TOPIC_FIVE))
+        mGalleryVp.adapter = GalleryPagerAdapter(context, listOf(HOME_TOPIC_ONE, HOME_TOPIC_TWO,
+                HOME_TOPIC_THREE, HOME_TOPIC_FOUR, HOME_TOPIC_FIVE))
         mGalleryVp.currentItem = 1
         mGalleryVp.offscreenPageLimit = 5
 

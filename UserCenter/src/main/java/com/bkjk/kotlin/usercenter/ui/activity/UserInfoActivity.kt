@@ -24,7 +24,10 @@ import com.bkjk.kotlin.usercenter.utils.UserPrefsUtils
 import com.jph.takephoto.app.TakePhoto
 import com.jph.takephoto.app.TakePhotoImpl
 import com.jph.takephoto.compress.CompressConfig
+import com.jph.takephoto.model.InvokeParam
+import com.jph.takephoto.model.TContextWrap
 import com.jph.takephoto.model.TResult
+import com.jph.takephoto.permission.PermissionManager
 import com.qiniu.android.http.ResponseInfo
 import com.qiniu.android.storage.UpCompletionHandler
 import com.qiniu.android.storage.UploadManager

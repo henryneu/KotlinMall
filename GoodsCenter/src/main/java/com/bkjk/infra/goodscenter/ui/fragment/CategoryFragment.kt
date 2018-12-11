@@ -1,11 +1,15 @@
 package com.bkjk.infra.goodscenter.ui.fragment
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import com.bkjk.infra.goodscenter.R
 import com.bkjk.infra.goodscenter.data.protocol.Category
+import com.bkjk.infra.goodscenter.injection.component.DaggerCategoryComponent
+import com.bkjk.infra.goodscenter.injection.module.CategoryModule
 import com.bkjk.infra.goodscenter.presenter.CategoryPresenter
 import com.bkjk.infra.goodscenter.presenter.view.CategoryView
-import com.bkjk.kotlin.baselibrary.injection.component.DaggerActivityComponent
 import com.bkjk.kotlin.baselibrary.ui.fragment.BaseMVPFragment
 
 /**
@@ -13,9 +17,13 @@ import com.bkjk.kotlin.baselibrary.ui.fragment.BaseMVPFragment
  */
 class CategoryFragment: BaseMVPFragment<CategoryPresenter>(), CategoryView, View.OnClickListener {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        super.onCreateView(inflater, container, savedInstanceState)
+        return inflater?.inflate(R.layout.fragment_category, container, false)
+    }
 
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         /** 初始化布局 */
         initView()
     }
@@ -24,6 +32,7 @@ class CategoryFragment: BaseMVPFragment<CategoryPresenter>(), CategoryView, View
      * 初始化布局
      */
     private fun initView() {
+        mPresenter.getCategory(0)
     }
 
     /**
@@ -37,11 +46,11 @@ class CategoryFragment: BaseMVPFragment<CategoryPresenter>(), CategoryView, View
      * 初始化依赖注入
      */
     override fun initInjectionComponent() {
-//        DaggerComponent.builder()
-//                .activityComponent(activityComponent)
-//                .userModule(UserModule())
-//                .build().inject(this)
-//        mPresenter.mView = this
+        DaggerCategoryComponent.builder()
+                .activityComponent(activityComponent)
+                .categoryModule(CategoryModule())
+                .build().inject(this)
+        mPresenter.mView = this
     }
 
     /**

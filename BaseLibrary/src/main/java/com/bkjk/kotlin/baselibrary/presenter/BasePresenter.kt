@@ -1,6 +1,7 @@
 package com.bkjk.kotlin.baselibrary.presenter
 
 import android.content.Context
+import com.bkjk.kotlin.baselibrary.R
 import com.bkjk.kotlin.baselibrary.presenter.view.BaseView
 import com.kotlin.base.utils.NetWorkUtils
 import com.trello.rxlifecycle2.LifecycleProvider
@@ -22,7 +23,7 @@ open class BasePresenter<T: BaseView> {
         if (NetWorkUtils.isNetWorkAvailable(context)) {
             return true
         }
-        mView.onError("网络连接不可用")
+        mView.onError(context.resources.getString(R.string.common_loading_no_network))
         return false
     }
 }

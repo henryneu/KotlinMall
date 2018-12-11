@@ -3,7 +3,7 @@ package com.bkjk.infra.goodscenter.injection.component
 import com.bkjk.infra.goodscenter.injection.module.CategoryModule
 import com.bkjk.infra.goodscenter.ui.fragment.CategoryFragment
 import com.bkjk.kotlin.baselibrary.injection.component.ActivityComponent
-import com.bkjk.kotlin.baselibrary.injection.module.PerComponentScope
+import com.bkjk.kotlin.baselibrary.injection.PerComponentScope
 import dagger.Component
 
 @PerComponentScope

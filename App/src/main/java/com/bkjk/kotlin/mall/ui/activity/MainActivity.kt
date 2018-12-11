@@ -3,6 +3,7 @@ package com.bkjk.kotlin.mall.ui.activity
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import com.ashokvarma.bottomnavigation.BottomNavigationBar
+import com.bkjk.infra.goodscenter.ui.fragment.CategoryFragment
 import com.bkjk.kotlin.baselibrary.ui.activity.BaseActivity
 import com.bkjk.kotlin.mall.R
 import com.bkjk.kotlin.mall.ui.fragment.HomeFragment
@@ -17,7 +18,7 @@ class MainActivity : BaseActivity() {
     // 首页 Fragment
     private val mHomeFragment by lazy { HomeFragment() }
     // 商品分类 Fragment
-    private val mCategoryFragment by lazy { HomeFragment() }
+    private val mCategoryFragment by lazy { CategoryFragment() }
     // 购物车 Fragment
     private val mCartFragment by lazy { HomeFragment() }
     // 消息 Fragment

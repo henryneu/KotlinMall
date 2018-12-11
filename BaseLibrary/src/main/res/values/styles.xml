@@ -79,7 +79,7 @@
     <style name="SearchHeaderStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@drawable/border_bottom</item>
+        <item name="android:background">@color/common_blue</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:paddingLeft">@dimen/common_padding</item>
         <item name="android:paddingTop">@dimen/common_padding_small</item>

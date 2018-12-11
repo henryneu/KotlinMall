@@ -76,7 +76,7 @@ class HeaderBar @JvmOverloads constructor(context: Context, attrs: AttributeSet?
     /**
      * 获取右侧文字
      */
-    fun getRightText(): String{
+    fun getRightText(): String {
         return mHeaderBarRt.text.toString()
     }
 }

@@ -13,5 +13,6 @@
     <string name="coming_soon_tip">敬请期待~~~</string>
     <string name="common_loading_error">加载错误</string>
     <string name="common_loading">正在加载</string>
+    <string name="common_loading_no_network">网络连接不可用</string>
 
 </resources>

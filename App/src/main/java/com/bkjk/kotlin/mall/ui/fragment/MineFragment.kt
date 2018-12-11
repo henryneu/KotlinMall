@@ -17,7 +17,7 @@ import com.bkjk.kotlin.usercenter.ui.activity.UserInfoActivity
 import kotlinx.android.synthetic.main.layout_fragment_mine.*
 import org.jetbrains.anko.support.v4.startActivity
 
-class MineFragment: BaseFragment(), View.OnClickListener {
+class MineFragment : BaseFragment(), View.OnClickListener {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -49,12 +49,13 @@ class MineFragment: BaseFragment(), View.OnClickListener {
 
     private fun initView() {
         mUserIconIv.onClick(this)
+        mUserNameTv.onClick(this)
         mSettingTv.onClick(this)
     }
 
     override fun onClick(view: View) {
-        when(view.id) {
-            R.id.mUserIconIv,R.id.mUserNameTv -> {
+        when (view.id) {
+            R.id.mUserIconIv, R.id.mUserNameTv -> {
                 if (isLogined()) {
                     startActivity<UserInfoActivity>()
                 } else {
