@@ -30,6 +30,7 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mBottomNavBar.checkCartBadge(20)
+        mBottomNavBar.checkMsgBadge(true)
 
         // 初始化所有的 Fragment
         initFragment()

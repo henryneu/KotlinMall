@@ -49,7 +49,7 @@ class BottomNavBar @JvmOverloads constructor(context: Context, attrs: AttributeS
 
         mMsgBadge = ShapeBadgeItem()
         mMsgBadge.setShape(ShapeBadgeItem.SHAPE_OVAL)
-        mMsgBadge.hide()
+        //mMsgBadge.hide()
         msgItem.setBadgeItem(mMsgBadge)
 
         /** 我的 */
